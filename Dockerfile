@@ -10,12 +10,27 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC apt-get install 
     pkg-config \
     python3 \
     python3-pip \
-    build-essential \ 
+    build-essential \
     libc6 \
     gcc \
     g++ \
     docker.io \
+    wget \
+    llvm-dev \
+    libclang-dev \
+    clang \
     && rm -rf /var/lib/apt/lists/*
+
+ENV LIBCLANG_PATH="/usr/lib/llvm-10/lib"
+
+# Install Go 1.22
+RUN wget https://go.dev/dl/go1.22.0.linux-amd64.tar.gz \
+    && rm -rf /usr/local/go \
+    && tar -C /usr/local -xzf go1.22.0.linux-amd64.tar.gz \
+    && rm go1.22.0.linux-amd64.tar.gz
+
+# Add Go to PATH
+ENV PATH="/usr/local/go/bin:${PATH}"
 
 # Install Rust separately for better caching
 RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
@@ -31,5 +46,5 @@ WORKDIR /usr/src/app
 
 # Copy source code last since it changes most frequently
 COPY . /usr/src/app
- 
+
 ENTRYPOINT ["/bin/bash", "-c"]
