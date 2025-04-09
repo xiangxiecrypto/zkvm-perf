@@ -6451,7 +6451,7 @@ dependencies = [
 [[package]]
 name = "sp1-reth-primitives"
 version = "0.1.0"
-source = "git+https://github.com/succinctlabs/sp1-reth.git?branch=john%2Fupdate-for-v1#40318ba452dfb7655af88e658469012f7863d15c"
+source = "git+https://github.com/0xshawn/sp1-reth.git?branch=john%2Fupdate-for-v1#0e283e7e50de9d12fdb9e6d278dc9c49c56a0180"
 dependencies = [
  "alloy-primitives 0.7.7",
  "alloy-rlp",

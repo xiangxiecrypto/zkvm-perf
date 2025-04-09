@@ -68,6 +68,12 @@ pub enum ProgramId {
     Groth16ProofVerify,
 
     ZKEmail,
+
+    // zkTLS
+    ZKTLSVerify16,
+    ZKTLSVerify256,
+    ZKTLSVerify1024,
+    ZKTLSVerify2048,
 }
 
 impl ProgramId {
