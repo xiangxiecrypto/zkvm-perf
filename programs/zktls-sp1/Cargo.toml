@@ -5,20 +5,9 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-rand = "0.8"
-aes-gcm = "0.10"
-aead = "0.4"
-aes = "0.8"
-serde = {version = "1.0", features=["derive"]}
-serde_json = "1.0"
-hex= "0.4"
-anyhow = "1.0"
 
-k256 = "0.10"
-sha2 = "0.9"
-structopt = "0.3"
-
-zktls-att-verification = {git = "https://github.com/primus-labs/zktls-att-verification.git", branch = "main"}
+serde = { version = "1.0", features = ["derive"] }
+zktls-att-verification = { git = "https://github.com/primus-labs/zktls-att-verification.git", branch = "main" }
 
 sp1-zkvm = "4.0.0-rc.10"
 
