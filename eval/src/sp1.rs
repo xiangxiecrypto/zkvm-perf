@@ -218,7 +218,7 @@ impl SP1Evaluator {
 
                 stdin.write(&verifying_data);
             }
-            ProgramID::ZKTLSVerify256 => {
+            ProgramId::ZKTLSVerify256 => {
                 let verifying_key =
                     std::fs::read_to_string("../../fixtures/zktls/keys/verifying_k256.key")
                         .unwrap();
