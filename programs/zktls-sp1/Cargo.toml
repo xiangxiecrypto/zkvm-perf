@@ -1,3 +1,4 @@
+[workspace]
 [package]
 name = "zktls-att-verification"
 version = "0.1.0"
@@ -16,6 +17,8 @@ anyhow = "1.0"
 k256 = "0.10"
 sha2 = "0.9"
 structopt = "0.3"
+
+zktls-att-verification = {git = "https://github.com/primus-labs/zktls-att-verification.git", branch = "main"}
 
 sp1-zkvm = "4.0.0-rc.10"
 

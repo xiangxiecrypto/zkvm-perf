@@ -15,6 +15,8 @@ use sp1_prover::HashableKey;
 
 use serde::{Deserialize, Serialize};
 
+use zktls_att_verification::verification_data::VerifyingDataOpt;
+
 #[cfg(feature = "cuda")]
 use sp1_cuda::SP1CudaProver;
 
@@ -203,6 +205,19 @@ impl SP1Evaluator {
 
                 stdin.write(&email_input);
             },
+            ProgramId::ZKTLSVerify16 => {
+                let verifying_key =
+                    std::fs::read_to_string("../../fixtures/zktls/keys/verifying_k256.key")
+                        .unwrap();
+
+                stdin.write(&verifying_key);
+
+                let json_content =
+                    std::fs::read_to_string("../../fixtures/zktls/data/bench16.json").unwrap();
+                let verifying_data: VerifyingDataOpt = serde_json::from_str(&json_content).unwrap();
+
+                stdin.write(&verifying_data);
+            }
             _ => {}
         }
 
