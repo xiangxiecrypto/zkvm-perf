@@ -58,6 +58,11 @@ pub fn get_elf(args: &EvalArgs) -> String {
         program_dir += "-";
         program_dir += args.prover.to_string().as_str();
     }
+    if program_dir.starts_with("zktls-verify"){
+        program_dir = "zktls-verify".to_string();
+        program_dir += "-";
+        program_dir += args.prover.to_string().as_str();
+    }
 
     let current_dir = env::current_dir().expect("Failed to get current working directory");
 
