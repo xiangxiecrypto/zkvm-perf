@@ -213,46 +213,46 @@ impl SP1Evaluator {
                 stdin.write(&verifying_key);
 
                 let json_content =
-                    std::fs::read_to_string("../../fixtures/zktls/data/bench16.json").unwrap();
+                    std::fs::read_to_string("fixtures/zktls/data/bench16.json").unwrap();
                 let verifying_data: VerifyingDataOpt = serde_json::from_str(&json_content).unwrap();
 
                 stdin.write(&verifying_data);
             }
             ProgramId::ZKTLSVerify256 => {
                 let verifying_key =
-                    std::fs::read_to_string("../../fixtures/zktls/verifying_k256.txt")
+                    std::fs::read_to_string("fixtures/zktls/verifying_k256.txt")
                         .unwrap();
 
                 stdin.write(&verifying_key);
 
                 let json_content =
-                    std::fs::read_to_string("../../fixtures/zktls/data/bench256.json").unwrap();
+                    std::fs::read_to_string("fixtures/zktls/data/bench256.json").unwrap();
                 let verifying_data: VerifyingDataOpt = serde_json::from_str(&json_content).unwrap();
 
                 stdin.write(&verifying_data);
             }
             ProgramId::ZKTLSVerify1024 => {
                 let verifying_key =
-                    std::fs::read_to_string("../../fixtures/zktls/verifying_k256.txt")
+                    std::fs::read_to_string("fixtures/zktls/verifying_k256.txt")
                         .unwrap();
 
                 stdin.write(&verifying_key);
 
                 let json_content =
-                    std::fs::read_to_string("../../fixtures/zktls/data/bench1024.json").unwrap();
+                    std::fs::read_to_string("fixtures/zktls/data/bench1024.json").unwrap();
                 let verifying_data: VerifyingDataOpt = serde_json::from_str(&json_content).unwrap();
 
                 stdin.write(&verifying_data);
             }
             ProgramId::ZKTLSVerify2048 => {
                 let verifying_key =
-                    std::fs::read_to_string("../../fixtures/zktls/verifying_k256.txt")
+                    std::fs::read_to_string("fixtures/zktls/verifying_k256.txt")
                         .unwrap();
 
                 stdin.write(&verifying_key);
 
                 let json_content =
-                    std::fs::read_to_string("../../fixtures/zktls/data/bench2048.json").unwrap();
+                    std::fs::read_to_string("fixtures/zktls/data/bench2048.json").unwrap();
                 let verifying_data: VerifyingDataOpt = serde_json::from_str(&json_content).unwrap();
 
                 stdin.write(&verifying_data);
