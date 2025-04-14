@@ -39,7 +39,7 @@ fi
 if [[ $program_directory == zk-email* ]]; then
     program_directory="zk-email-$2"
 fi
-if [[ $program_directory == zktls* ]]; then
+if [[ $program_directory == zktls-verify* ]]; then
     program_directory="zktls-$2"
 fi
 

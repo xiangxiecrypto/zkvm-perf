@@ -46,7 +46,7 @@ pub enum ProgramId {
 
     // Tendermint.
     Tendermint,
-    
+
     // RSP
     Rsp20526626,
     Rsp20526627,
@@ -58,9 +58,9 @@ pub enum ProgramId {
     Rsp20528710,
     Rsp20528711,
     Rsp20528712,
-    
+
     // Signatures
-    ECDSAVerify,    
+    ECDSAVerify,
     EDDSAVerify,
 
     Helios,
@@ -71,15 +71,15 @@ pub enum ProgramId {
 
     // zkTLS
     ZKTLSVerify16,
-    // ZKTLSVerify256,
-    // ZKTLSVerify1024,
-    // ZKTLSVerify2048,
+    ZKTLSVerify256,
+    ZKTLSVerify1024,
+    ZKTLSVerify2048,
 }
 
 impl ProgramId {
     /// The "priority" of a program is used to sort the programs in the performance report.
     ///
-    /// The higher the priority, the more work the proof requires. 
+    /// The higher the priority, the more work the proof requires.
     pub(crate) fn priority(&self) -> usize {
         match self {
             // Loop
@@ -91,7 +91,7 @@ impl ProgramId {
             ProgramId::Loop30m => 6,
             ProgramId::Loop100m => 7,
             ProgramId::Loop300m => 8,
-            
+
             // Fibonacci
             ProgramId::Fibonacci20k => 1,
             ProgramId::Fibonacci200k => 2,
@@ -104,27 +104,27 @@ impl ProgramId {
             ProgramId::Fibonacci1b => 9,
             ProgramId::Fibonacci2b => 10,
             ProgramId::Fibonacci4b => 11,
-            
+
             // SHA-256
             ProgramId::Sha256100kb => 1,
             ProgramId::Sha256300kb => 2,
             ProgramId::Sha2561mb => 3,
             ProgramId::Sha2563mb => 4,
             ProgramId::Sha25610mb => 5,
-            
+
             // Keccak-256
             ProgramId::Keccak256100kb => 1,
             ProgramId::Keccak256300kb => 2,
             ProgramId::Keccak2561mb => 3,
             ProgramId::Keccak2563mb => 4,
             ProgramId::Keccak25610mb => 5,
-            
+
             // SSZ Withdrawals
             ProgramId::SSZWithdrawals => 1,
-            
+
             // Tendermint
             ProgramId::Tendermint => 1,
-            
+
             // RSP
             ProgramId::Rsp20526626 => 1,
             ProgramId::Rsp20526627 => 1,
@@ -136,7 +136,7 @@ impl ProgramId {
             ProgramId::Rsp20528710 => 1,
             ProgramId::Rsp20528711 => 1,
             ProgramId::Rsp20528712 => 1,
-            
+
             // Signatures
             ProgramId::ECDSAVerify => 1,
             ProgramId::EDDSAVerify => 1,
@@ -149,6 +149,9 @@ impl ProgramId {
 
             // zkTLS
             ProgramId::ZKTLSVerify16 => 1,
+            ProgramId::ZKTLSVerify256 => 2,
+            ProgramId::ZKTLSVerify1024 => 3,
+            ProgramId::ZKTLSVerify2048 => 4,
         }
     }
 }
@@ -218,7 +221,10 @@ impl Display for ProgramId {
             ProgramId::Helios => write!(f, "helios"),
             ProgramId::Groth16ProofVerify => write!(f, "groth16-proof-verify"),
             ProgramId::ZKEmail => write!(f, "zk-email"),
-            ProgramId::ZKTLSVerify16 => write!(f, "zk-tls-verify-16"),
+            ProgramId::ZKTLSVerify16 => write!(f, "zktls-verify-16"),
+            ProgramId::ZKTLSVerify256 => write!(f, "zktls-verify-256"),
+            ProgramId::ZKTLSVerify1024 => write!(f, "zktls-verify-1024"),
+            ProgramId::ZKTLSVerify2048 => write!(f, "zktls-verify-2048"),
         }
     }
 }

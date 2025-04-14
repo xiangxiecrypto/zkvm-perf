@@ -5,7 +5,6 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-
 serde = { version = "1.0", features = ["derive"] }
 zktls-att-verification = { git = "https://github.com/primus-labs/zktls-att-verification.git", branch = "main" }
 

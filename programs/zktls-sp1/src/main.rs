@@ -1,6 +1,6 @@
 #![no_main]
 
-use verification_data::{VerifyingData, VerifyingDataOpt};
+use zktls_att_verification::verification_data::VerifyingDataOpt;
 
 #[cfg(feature = "sp1")]
 sp1_zkvm::entrypoint!(main);
