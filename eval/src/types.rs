@@ -68,6 +68,12 @@ pub enum ProgramId {
     Groth16ProofVerify,
 
     ZKEmail,
+
+    // zkTLS
+    ZKTLSVerify16,
+    ZKTLSVerify256,
+    ZKTLSVerify1024,
+    ZKTLSVerify2048,
 }
 
 impl ProgramId {
@@ -140,6 +146,11 @@ impl ProgramId {
             ProgramId::Groth16ProofVerify => 1,
 
             ProgramId::ZKEmail => 1,
+
+            ProgramId::ZKTLSVerify16 => 1,
+            ProgramId::ZKTLSVerify256 => 2,
+            ProgramId::ZKTLSVerify1024 => 3,
+            ProgramId::ZKTLSVerify2048 => 4,
         }
     }
 }
@@ -209,6 +220,10 @@ impl Display for ProgramId {
             ProgramId::Helios => write!(f, "helios"),
             ProgramId::Groth16ProofVerify => write!(f, "groth16-proof-verify"),
             ProgramId::ZKEmail => write!(f, "zk-email"),
+            ProgramId::ZKTLSVerify16 => write!(f, "zktls-verify-16"),
+            ProgramId::ZKTLSVerify256 => write!(f, "zktls-verify-256"),
+            ProgramId::ZKTLSVerify1024 => write!(f, "zktls-verify-1024"),
+            ProgramId::ZKTLSVerify2048 => write!(f, "zktls-verify-2048"),
         }
     }
 }

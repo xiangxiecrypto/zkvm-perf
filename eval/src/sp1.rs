@@ -203,6 +203,34 @@ impl SP1Evaluator {
 
                 stdin.write(&email_input);
             },
+            ProgramId::ZKTLSVerify16 => {
+                let verifying_key = fs::read_to_string("fixtures/zktls/keys/verifying_k256.key").unwrap();
+                let verifying_data = fs::read_to_string("fixtures/zktls/data/bench16.json").unwrap();
+
+                stdin.write(&verifying_key);
+                stdin.write(&verifying_data);
+            },
+            ProgramId::ZKTLSVerify256 => {
+                let verifying_key = fs::read_to_string("fixtures/zktls/keys/verifying_k256.key").unwrap();
+                let verifying_data = fs::read_to_string("fixtures/zktls/data/bench256.json").unwrap();
+
+                stdin.write(&verifying_key);
+                stdin.write(&verifying_data);
+            },
+            ProgramId::ZKTLSVerify1024 => {
+                let verifying_key = fs::read_to_string("fixtures/zktls/keys/verifying_k256.key").unwrap();
+                let verifying_data = fs::read_to_string("fixtures/zktls/data/bench1024.json").unwrap();
+
+                stdin.write(&verifying_key);
+                stdin.write(&verifying_data);
+            },
+            ProgramId::ZKTLSVerify2048 => {
+                let verifying_key = fs::read_to_string("fixtures/zktls/keys/verifying_k256.key").unwrap();
+                let verifying_data = fs::read_to_string("fixtures/zktls/data/bench2048.json").unwrap();
+
+                stdin.write(&verifying_key);
+                stdin.write(&verifying_data);
+            },
             _ => {}
         }
 
