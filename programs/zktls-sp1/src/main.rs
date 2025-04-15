@@ -12,6 +12,6 @@ pub fn main() {
 
     let _ = verifying_data.verify(&verifying_key).is_ok();
 
-    //sp1_zkvm::io::commit(&verifying_key);
+    sp1_zkvm::io::commit(&verifying_key);
     //sp1_zkvm::io::commit(&verifying_data.get_records());
 }
